@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'vrm_search/favicon/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'vrm_search/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vrm_search/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'vrm_search/css/results.css' %}">
+    <link rel="stylesheet" href="{% static 'vrm_search/css/animation.css' %}">
+    <title>VRM Search</title>
+</head>
+<body>
+
+<div class="application-container">
+    <header>
+        <section class="logo">
+            <img src="{% static 'vrm_search/img/car.svg' %}" alt="Car Logo">
+            <h1>VRM Search</h1>
+        </section>
+        <h2>
+            UK Vehicle<br/>
+            Registration Mark
+        </h2>
+    </header>
+    <section class="blue-accent">
+
+    </section>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+</body>
+</html>

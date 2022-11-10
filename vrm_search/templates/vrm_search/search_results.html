@@ -1,0 +1,90 @@
+{% extends 'vrm_search/base.html' %}
+{% load vrm_search.custom %}
+
+{% block content %}
+    <article class="results">
+        <section class="vrm">
+            {{ results.registrationNumber }}
+        </section>
+        <section class="tax-mot">
+            <!-- TAX Details -->
+            {% if results.taxStatus == 'Not Taxed for on Road Use' %}
+                <section class="container neutral">
+                    <h3>{{ results.taxStatus }}</h3>
+                </section>
+            {% elif results.taxStatus == 'SORN' %}
+                <section class="container valid">
+                    <h3>{{ results.taxStatus }} ✓</h3>
+                </section>
+            {% elif results.taxStatus == 'Taxed' %}
+                <section class="container valid">
+                    <h3>{{ results.taxStatus }} ✓</h3>
+                    Due:
+                    <h3>{{ results.taxDueDate|format_date }}</h3>
+                </section>
+            {% elif results.taxStatus == 'Untaxed' %}
+                <section class="container invalid">
+                    <h3>{{ results.taxStatus }} ✓</h3>
+                    Due:
+                    <h3>{{ results.taxDueDate|format_date }}</h3>
+                </section>
+            {% endif %}
+            <!-- MOT Details -->
+            {% if results.motStatus == 'No details held by DVLA' %}
+                <section class="container neutral">
+                    <h3>MOT</h3>
+                    <h3>No details held by DVLA</h3>
+                </section>
+            {% elif results.motStatus == 'No results returned' %}
+                <section class="container neutral">
+                    <h3>MOT</h3>
+                    <h3>No results returned</h3>
+                </section>
+            {% elif results.motStatus == 'Not valid' %}
+                <section class="container invalid">
+                    <h3>MOT ✗</h3>
+                    Expired:
+                    <h3>{{ results.motExpiryDate|format_date }}</h3>
+                </section>
+            {% elif results.motStatus == 'Valid' %}
+                <section class="container valid">
+                    <h3>MOT ✓</h3>
+                    Expires:
+                    <h3>{{ results.motExpiryDate|format_date }}</h3>
+                </section>
+            {% endif %}
+        </section>
+        <section class="details">
+            <h1>Vehicle Details</h1>
+            <div class="grid">
+                <h3>Registration Number</h3>
+                <span>{{ results.registrationNumber }}</span>
+                <h3>Vehicle Make</h3>
+                <span>{{ results.make }}</span>
+                <h3>Colour</h3>
+                <span>{{ results.colour }}</span>
+                <h3>First Registration Date</h3>
+                <span>{{ results.monthOfFirstRegistration|format_date }}</span>
+                <h3>Manufacture Year</h3>
+                <span>{{ results.yearOfManufacture }}</span>
+                <h3>Engine Capacity (cc)</h3>
+                <span>{{ results.engineCapacity|insert_comma }}</span>
+                <h3>CO₂ Emissions (g/km)</h3>
+                <span>{{ results.co2Emissions }}</span>
+                <h3>Fuel Type</h3>
+                <span>{{ results.fuelType }}</span>
+                <h3>Export Marker</h3>
+                <span>{{ results.markedForExport|yesno:'Yes,No' }}</span>
+                <h3>Vehicle Type Approval</h3>
+                <span>{{ results.typeApproval }}</span>
+                <h3>Wheel Plan</h3>
+                <span>{{ results.wheelplan }}</span>
+                <h3>Last V5C Issue Date</h3>
+                <span>{{ results.dateOfLastV5CIssued|format_date }}</span>
+            </div>
+        </section>
+        <section class="reset">
+            <a href="{% url 'vrm-search' %}">Search another vehicle</a>
+        </section>
+    </article>
+{% endblock %}

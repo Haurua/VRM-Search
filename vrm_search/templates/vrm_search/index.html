@@ -1,0 +1,18 @@
+{% extends 'vrm_search/base.html' %}
+
+{% block content %}
+    <section class="search">
+        <h1>Enter your vehicle registration number</h1>
+        <h2>For example, 'KI55 SME'</h2>
+        {% for message in messages %}
+            <h3>{{ message }}</h3>
+        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="vrm">
+                <input name="vrm" type="text" placeholder="ENTER REG">
+            </label>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+{% endblock %}

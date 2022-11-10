@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    /* Position */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Style */
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.application-container {
+    /* Layout */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "header" "colour-accent" "main";
+}
+
+header {
+    /* Position */
+    grid-area: header;
+    padding: 15px 25px;
+    /* Layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Style */
+    background-color: #1e1e1e;
+}
+
+header section.logo {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header section.logo img {
+    /* Style */
+    width: 40px;
+    animation: shake 3s ease 0s infinite normal forwards;
+}
+
+header section.logo h1 {
+    /* Style */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+header h2 {
+    /* Style */
+    text-align: center;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: .7rem;
+}
+
+section.blue-accent {
+    /* Position */
+    grid-area: colour-accent;
+    margin: auto;
+    width: 95%;
+    height: 10px;
+    /* Style */
+    background-color: #2883c2;
+}
+
+main {
+    /* Position */
+    grid-area: main;
+    margin: 50px;
+}
+
+@media (max-width: 600px) {
+    main {
+        /* Position */
+        margin: 5%;
+    }
+}

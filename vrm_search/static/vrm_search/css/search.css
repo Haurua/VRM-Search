@@ -1,0 +1,76 @@
+main .search {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .search h1 {
+    /* Style */
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+main .search  h2 {
+    /* Style */
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+main .search  h3 {
+    /* Style */
+    color: #b60000;
+    font-weight: 600;
+    font-size: 1.2rem;
+    animation: blink 4s ease 0s 1 normal forwards;
+}
+
+main .search  form {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main .search  form input {
+    /* Position */
+    padding: 5px;
+    max-width: 300px;
+    min-width: 0;
+    /* Style */
+    border: 2px solid #2883c2;
+    border-radius: 5px;
+    background-color: rgb(238, 183, 9);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+main .search  form button {
+    /* Position */
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100px;
+    /* Style */
+    border: none;
+    box-shadow: 1px 1px 0 #121212;
+    background-color: #2883c2;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: .15s;
+}
+
+main .search  form button:hover {
+    /* Style */
+    background-color: #1e6191;
+}
+
+main .search  form button:active {
+    /* Style */
+    box-shadow: none;
+    border: 2px solid rgb(238, 183, 9);
+}

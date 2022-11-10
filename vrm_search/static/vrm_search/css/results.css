@@ -1,0 +1,106 @@
+main .results {
+    /* Position */
+    margin: auto;
+    max-width: 600px;
+    /* Layout */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, max-content);
+    grid-template-areas: "vrm" "tax-mot" "details" "reset";
+    gap: 2rem;
+}
+
+main .results .vrm {
+    /* Position */
+    margin: auto;
+    padding: 5px;
+    width: 300px;
+    /* Style */
+    border: 2px solid #2883c2;
+    border-radius: 5px;
+    background-color: rgb(238, 183, 9);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+main .results .tax-mot {
+    /* Position */
+    grid-area: tax-mot;
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+main .results .tax-mot .container {
+    /* Position */
+    box-sizing: border-box;
+    height: 130px;
+    padding: 15px;
+    /* Style */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* Style */
+    color: #ffffff;
+}
+
+.valid {
+    /* Style */
+    background-color: #0C5E1A;
+}
+
+.invalid {
+    /* Style */
+    background-color: #b60000;
+}
+
+.neutral {
+    /* Style */
+    background-color: #828282;
+}
+
+main .results h1 {
+    /* Position */
+    margin-bottom: 30px;
+    /* Style */
+    font-size: 2em;
+}
+
+main .results .details .grid {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+main .results .reset a {
+    /* Position */
+    padding: 10px;
+    /* Style */
+    text-decoration: none;
+    box-shadow: 1px 1px 0 #121212;
+    border: none;
+    background-color: #2883c2;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1em;
+    transition: .15s;
+}
+
+main .results .reset a:hover {
+    /* Style */
+    background-color: #1e6191;
+}
+
+main .results .reset a:active {
+    /* Style */
+    box-shadow: none;
+    border: 2px solid rgb(238, 183, 9);
+}
